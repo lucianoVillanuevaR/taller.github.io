@@ -1,11 +1,180 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main class="page">
+    <section class="hero">
+      <p class="kicker">Taller de Desarrollo</p>
+      <h1>Propuesta para proyecto de titulo</h1>
+      <p class="subtitle">
+        Gestión de Servicios, Agendamiento Automatizado y Comunicación Centralizada para Barberías en la ciudad de Concepción.
+      </p>
+
+
+    </section>
+
+    <section id="servicios" class="grid">
+      <article class="card">
+        <h3>¿Que es lo que buscamos?</h3>
+        <p>Implementar una plataforma web centralizada que permita a los barberos de Concepción profesionalizar su servicio. El objetivo es eliminar las agendas de papel y los mensajes dispersos, ofreciendo una vitrina digital moderna donde cada profesional pueda mostrar su trabajo y gestionar su tiempo de forma eficiente.</p>
+      </article>
+      <article class="card">
+        <h3>Agendamiento Automatizado</h3>
+        <p>Se implementará un motor de reservas en tiempo real que permita a los clientes gestionar sus citas de forma autónoma desde cualquier dispositivo. Esto optimiza la jornada laboral del barbero al eliminar las interrupciones por llamadas o mensajes, garantizando una agenda organizada sin errores de sobrecupos.</p>
+      </article>
+      <article class="card">
+        <h3>Comunicación Centralizada</h3>
+        <p>La plataforma integrará un canal de comunicación directo (Chat Box) para centralizar todas las consultas técnicas y dudas sobre los servicios. Este módulo permite separar la vida personal del profesional de su actividad laboral, manteniendo la trazabilidad de la atención y mejorando la fidelización del cliente.</p>
+      </article>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Francico Flores Cares</h2>
+      <p>
+	  Estudiante
+	  </p>
+	  </p>
+	  Ing. de ejecucion  en computacion e informatica
+	  </p>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  :root {
+    --bg: #0b0b10;
+    --bg-soft: #12121a;
+    --text: #f5f7ff;
+    --muted: #a6accd;
+    --accent-a: #8b5cf6;
+    --accent-b: #06b6d4;
+    --accent-c: #ec4899;
+    --border: #2a2a38;
+  }
+
+  .page {
+    min-height: 100vh;
+    color: var(--text);
+    background:
+      radial-gradient(900px 500px at 10% -10%, #4f46e533 0%, transparent 60%),
+      radial-gradient(700px 450px at 90% 0%, #06b6d433 0%, transparent 60%),
+      linear-gradient(180deg, #0a0a0f 0%, #0d0d14 100%);
+    padding: 72px 20px;
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+  }
+
+  .hero {
+    max-width: 980px;
+    margin: 0 auto 52px;
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: linear-gradient(160deg, #131320 0%, #0e0e16 100%);
+    box-shadow: 0 20px 80px #00000066;
+  }
+
+  .kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d3d8ff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  }
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    max-width: 60ch;
+    font-size: 1.05rem;
+  }
+
+  .actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    color: white;
+    background: linear-gradient(90deg, var(--accent-a), var(--accent-c), var(--accent-b));
+    background-size: 200% 200%;
+    animation: move 6s ease infinite;
+  }
+
+  .btn-ghost {
+    color: var(--text);
+    border-color: var(--border);
+    background: #141422;
+  }
+
+  .grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    background: linear-gradient(160deg, #141421 0%, #0f0f18 100%);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .contact {
+    max-width: 980px;
+    margin: 26px auto 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #10101a;
+  }
+
+  .contact h2 {
+    margin: 0 0 8px;
+  }
+
+  .contact p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  @keyframes move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
